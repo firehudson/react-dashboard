@@ -1,2 +1,3 @@
 
-export const BASE_ROUTE = '/'; // eslint-disable-line import/prefer-default-export
+export const BASE_ROUTE = '/';
+export const LOGIN_ROUTE = '/login';
