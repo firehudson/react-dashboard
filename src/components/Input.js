@@ -42,7 +42,7 @@ InputField.propTypes = {
   placeholder: PropTypes.string.isRequired,
   meta: PropTypes.shape({
     touched: PropTypes.bool.isRequired,
-    error: PropTypes.string.isRequired,
+    error: PropTypes.string,
   }).isRequired,
   input: PropTypes.shape({
     name: PropTypes.string.isRequired,
