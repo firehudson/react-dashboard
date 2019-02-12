@@ -5,6 +5,10 @@ export const theme = {
       background: 'rgb(242, 240, 248)',
       primary: 'rgb(90, 89, 119)',
     },
+    navbar: {
+      background: 'rgb(73, 72, 90)',
+      fontColor: 'rgb(200, 200, 220)',
+    },
   },
 };
 

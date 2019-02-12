@@ -5,10 +5,12 @@ import { ThemeProvider } from 'styled-components';
 import withStore from '../utils/withStore';
 import getTheme from '../constants/themes';
 import GlobalStyles from '../components/GlobalStyles';
+import Header from '../components/Header';
 
 const App = ({ children }) => (
   <ThemeProvider theme={getTheme()}>
     <Fragment>
+      <Header />
       {children}
       <GlobalStyles />
     </Fragment>
