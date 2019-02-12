@@ -1,28 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Field, reduxForm, Form } from 'redux-form';
+import { reduxForm } from 'redux-form';
 import validator from 'validator';
 import Card from '../../../components/Card';
-import Input from '../../../components/Input';
-import Button from '../../../components/Button';
+import LoginForm from '../components/login-form';
 
 const LoginPage = ({ handleSubmit }) => (
   <Card padding="40px" borderRadius="0">
-    <Form onSubmit={handleSubmit}>
-      <Field
-        name="email"
-        placeholder="Email"
-        component={Input}
-        type="text"
-      />
-      <Field
-        name="password"
-        placeholder="Password"
-        component={Input}
-        type="password"
-      />
-      <Button type="submit">Submit</Button>
-    </Form>
+    <LoginForm onSubmit={handleSubmit} />
   </Card>
 );
 
