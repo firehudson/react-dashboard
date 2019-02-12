@@ -9,6 +9,7 @@ export const theme = {
       background: 'rgb(73, 72, 90)',
       fontColor: 'rgb(200, 200, 220)',
     },
+    white: 'rgb(255, 255, 255)',
   },
 };
 
