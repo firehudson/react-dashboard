@@ -33,7 +33,7 @@ const generateDatabase = () => {
       fullname: faker.Name.findName(),
       status: faker.random.array_element(config.userStatuses),
       connections,
-    })
+    });
   });
 
   times(config.postCount, (index) => {
@@ -41,7 +41,7 @@ const generateDatabase = () => {
       id: index,
       title: faker.Lorem.sentence(6),
       content: faker.Lorem.paragraph(3),
-      userId: faker.random.array_element(userIds)
+      userId: faker.random.array_element(userIds),
     });
   });
 
