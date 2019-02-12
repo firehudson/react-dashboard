@@ -13,10 +13,9 @@ const GlobalStyles = createGlobalStyle`
   }
 
   #root {
-    min-height: 100%;
-    min-width: 100%;
-    display: grid;
-    background-color: ${props => props.theme.colors.app.background}
+    height: 100%;
+    width: 100%;
+    background-color: ${props => props.theme.colors.app.background};
   }
 `;
 

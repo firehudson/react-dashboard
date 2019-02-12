@@ -6,12 +6,15 @@ import withStore from '../utils/withStore';
 import getTheme from '../constants/themes';
 import GlobalStyles from '../components/GlobalStyles';
 import Header from '../components/Header';
+import RootWrapper from '../components/RootWrapper';
 
 const App = ({ children }) => (
   <ThemeProvider theme={getTheme()}>
     <Fragment>
       <Header />
-      {children}
+      <RootWrapper>
+        {children}
+      </RootWrapper>
       <GlobalStyles />
     </Fragment>
   </ThemeProvider>
