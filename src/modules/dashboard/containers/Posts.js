@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { fetchPosts } from '../actions';
 import ContentWrapper from '../components/ContentWrapper';
+import Posts from '../components/Posts';
 import { selectPostsData } from '../selectors/posts';
 import { selectUserData } from '../../auth/selectors/login';
 
@@ -16,9 +17,11 @@ class PostsPage extends Component {
   }
 
   render() {
+    const { posts } = this.props;
+
     return (
       <ContentWrapper>
-        Posts page
+        <Posts posts={posts} />
       </ContentWrapper>
     );
   }
@@ -29,6 +32,7 @@ PostsPage.propTypes = {
   user: PropTypes.shape({
     id: PropTypes.number.isRequired,
   }).isRequired,
+  posts: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 const mapStateToProps = createStructuredSelector({
