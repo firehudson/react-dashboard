@@ -29,6 +29,7 @@ const generateDatabase = () => {
       id: index,
       firstName: faker.Name.firstName(),
       lastName: faker.Name.lastName(),
+      username: faker.Internet.userName(),
       email: faker.Internet.email(),
       password: faker.Lorem.words(1)[0],
       fullname: faker.Name.findName(),
