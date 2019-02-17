@@ -1,7 +1,10 @@
 import { handleActions } from 'redux-actions';
 import { POSTS_REQUEST, POSTS_SUCCESS, POSTS_FAILURE } from '../actions/actionTypes';
 
-export const initialState = {};
+export const initialState = {
+  posts: [],
+  loading: false,
+};
 
 const postsReducer = handleActions(
   {
@@ -10,7 +13,7 @@ const postsReducer = handleActions(
       loading: true,
     }),
     [POSTS_SUCCESS]: (state, action) => ({
-      ...action.data,
+      posts: action.data,
       loading: false,
     }),
     [POSTS_FAILURE]: (state, action) => ({

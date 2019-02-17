@@ -34,9 +34,13 @@ PostsPage.propTypes = {
   fetchPosts: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   user: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.number,
   }).isRequired,
-  posts: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  posts: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+  })),
 };
 
 const withForm = reduxForm({
