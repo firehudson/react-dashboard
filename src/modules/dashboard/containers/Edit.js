@@ -37,7 +37,7 @@ EditSettingsPage.propTypes = {
   successMessage: PropTypes.string,
   user: PropTypes.shape({
     id: PropTypes.number.isRequired,
-  }).isRequired,
+  }),
 };
 
 const withForm = reduxForm({
