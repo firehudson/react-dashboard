@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { combineReducers, bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import validator from 'validator';
+import { login } from '../actions';
 import Card from '../../../components/Card';
 import LoginForm from '../components/login-form';
 
@@ -17,7 +20,9 @@ LoginPage.propTypes = {
 
 const withForm = reduxForm({
   form: 'login',
-  onSubmit: formValues => console.log(formValues),
+  onSubmit: (formValues, l, ownProps) => {
+    ownProps.login(formValues.email, formValues.password);
+  },
   validate: (values) => {
     const errors = {};
 
@@ -35,4 +40,9 @@ const withForm = reduxForm({
   },
 })(LoginPage);
 
-export default withForm;
+const reduxConnected = connect(
+  null,
+  dispatch => bindActionCreators({ login }, dispatch),
+)(withForm);
+
+export default reduxConnected;
