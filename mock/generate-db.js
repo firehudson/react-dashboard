@@ -33,6 +33,7 @@ const generateDatabase = () => {
       email: faker.Internet.email(),
       password: faker.Lorem.words(1)[0],
       fullname: faker.Name.findName(),
+      avatar: faker.random.avatar_uri(),
       status: faker.random.array_element(config.userStatuses),
       connections,
     });
