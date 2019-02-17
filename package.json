@@ -42,6 +42,7 @@
     ],
     "rules": {
       "react/jsx-filename-extension": "off",
+      "react/require-default-props": "off",
       "no-confusing-arrow": "off",
       "import/no-named-as-default": "off"
     }
