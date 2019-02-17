@@ -11,7 +11,7 @@ module.exports = (req, res, next) => { // eslint-disable-line consistent-return
 
     return res.status(200).send({
       data: null,
-      error: 'No user found with given email and password',
+      error: 'Invalid user email or password',
     });
   }
 

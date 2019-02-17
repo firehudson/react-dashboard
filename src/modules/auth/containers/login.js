@@ -1,21 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { combineReducers, bindActionCreators } from 'redux';
+import { bindActionCreators } from 'redux';
+import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import validator from 'validator';
 import { login } from '../actions';
+import { selectUserError } from '../selectors/login';
 import Card from '../../../components/Card';
 import LoginForm from '../components/login-form';
 
-const LoginPage = ({ handleSubmit }) => (
+const LoginPage = ({ handleSubmit, formError }) => (
   <Card padding="40px" borderRadius="0">
-    <LoginForm onSubmit={handleSubmit} />
+    <LoginForm onSubmit={handleSubmit} submitError={formError} />
   </Card>
 );
 
 LoginPage.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
+  formError: PropTypes.string,
 };
 
 const withForm = reduxForm({
@@ -40,9 +43,20 @@ const withForm = reduxForm({
   },
 })(LoginPage);
 
+const mapStateToProps = createStructuredSelector({
+  formError: selectUserError,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(
+  {
+    login,
+  },
+  dispatch,
+);
+
 const reduxConnected = connect(
-  null,
-  dispatch => bindActionCreators({ login }, dispatch),
+  mapStateToProps,
+  mapDispatchToProps,
 )(withForm);
 
 export default reduxConnected;

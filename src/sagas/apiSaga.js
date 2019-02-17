@@ -17,7 +17,7 @@ export function* apiSaga(action) {
     }
 
     if (response.data.error) {
-      throw new Error(JSON.stringify(response.data.error));
+      throw new Error(response.data.error);
     }
 
     yield put({ type: success, data: response.data.data });

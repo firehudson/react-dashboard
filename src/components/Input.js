@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import ErrorMessage from './ErrorMessage';
 
 const Input = styled('input')`
   padding: 10px 20px;
@@ -12,13 +13,6 @@ const Input = styled('input')`
   :focus {
     outline: none;
   }
-`;
-
-const Error = styled('div')`
-  font-size: 10px;
-  padding-left: 5px;
-  color: orangered;
-  height: 15px;
 `;
 
 const Wrapper = styled('div')`
@@ -33,7 +27,9 @@ const InputField = ({
 }) => (
   <Wrapper>
     <Input {...input} placeholder={placeholder} type={type} />
-    <Error>{(meta.touched && meta.error) ? meta.error : ''}</Error>
+    <ErrorMessage>
+      {(meta.touched && meta.error) ? meta.error : ''}
+    </ErrorMessage>
   </Wrapper>
 );
 

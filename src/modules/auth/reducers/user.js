@@ -15,7 +15,7 @@ const userReducer = handleActions(
     }),
     [LOGIN_FAILURE]: (state, action) => ({
       loading: false,
-      error: action.error,
+      error: action.error.message,
     }),
   },
   initialState,
