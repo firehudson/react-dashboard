@@ -3,9 +3,15 @@ import PropTypes from 'prop-types';
 import { Field, Form } from 'redux-form';
 import Input from '../../../components/Input';
 import ErrorMessage from '../../../components/ErrorMessage';
+import SuccessMessage from '../../../components/SuccessMessage';
 import Button from '../../../components/Button';
 
-const AccountSettingsForm = ({ onSubmit, submitError }) => (
+const AccountSettingsForm = ({
+  onSubmit,
+  submitError,
+  successMessage,
+  dirty,
+}) => (
   <Form onSubmit={onSubmit}>
     <Field
       name="firstName"
@@ -31,6 +37,9 @@ const AccountSettingsForm = ({ onSubmit, submitError }) => (
       component={Input}
       type="text"
     />
+    {(!dirty && successMessage) && (
+      <SuccessMessage>{successMessage}</SuccessMessage>
+    )}
     <ErrorMessage>{submitError || ''}</ErrorMessage>
     <Button type="submit">Update Settings</Button>
   </Form>
@@ -39,6 +48,8 @@ const AccountSettingsForm = ({ onSubmit, submitError }) => (
 AccountSettingsForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   submitError: PropTypes.string,
+  successMessage: PropTypes.string,
+  dirty: PropTypes.bool,
 };
 
 export default AccountSettingsForm;
