@@ -6,3 +6,4 @@ export const AUTH_BASE_ROUTE = '/';
 
 export const DASHBOARD_BASE_ROUTE = '/dashboard';
 export const DASHBOARD_HOME = '/dashboard/:user';
+export const DASHBOARD_EDIT = '/dashboard/:user/edit';

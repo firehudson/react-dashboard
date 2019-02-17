@@ -1,12 +1,15 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
-import Login from './containers/login';
-import { DASHBOARD_HOME } from '../../constants/routes';
+import { DASHBOARD_HOME, DASHBOARD_EDIT } from '../../constants/routes';
+import Posts from './containers/Posts';
+import Edit from './containers/Edit';
+import DashboardContainer from './containers/DashboardContainer';
 
 const dashboardRoutes = (
-  <Fragment>
-    <Route exact path={DASHBOARD_HOME} component={Login} />
-  </Fragment>
+  <DashboardContainer>
+    <Route exact path={DASHBOARD_HOME} component={Posts} />
+    <Route path={DASHBOARD_EDIT} component={Edit} />
+  </DashboardContainer>
 );
 
 export default dashboardRoutes;
