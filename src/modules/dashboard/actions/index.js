@@ -5,7 +5,7 @@ import {
   POSTS_FAILURE,
 } from './actionTypes';
 
-export const fetchPosts = userId => ({ // eslint-disable-line import/prefer-default-export
+export const fetchPosts = (userId, searchText = '') => ({ // eslint-disable-line import/prefer-default-export
   type: CALL_API,
   types: [
     POSTS_REQUEST,
@@ -13,5 +13,5 @@ export const fetchPosts = userId => ({ // eslint-disable-line import/prefer-defa
     POSTS_FAILURE,
   ],
   method: 'get',
-  endPoint: `posts?userId=${userId}`,
+  endPoint: `posts?userId=${userId}&q=${searchText}`,
 });
