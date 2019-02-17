@@ -3,9 +3,9 @@ import {
   POSTS_REQUEST,
   POSTS_SUCCESS,
   POSTS_FAILURE,
-  UDPATE_USER_REQUEST,
-  UDPATE_USER_SUCCESS,
-  UDPATE_USER_FAILURE,
+  UPDATE_USER_REQUEST,
+  UPDATE_USER_SUCCESS,
+  UPDATE_USER_FAILURE,
 } from './actionTypes';
 
 export const fetchPosts = (userId, searchText = '') => ({
@@ -22,9 +22,9 @@ export const fetchPosts = (userId, searchText = '') => ({
 export const updateUser = (userId, updatedValues) => ({
   type: CALL_API,
   types: [
-    UDPATE_USER_REQUEST,
-    UDPATE_USER_SUCCESS,
-    UDPATE_USER_FAILURE,
+    UPDATE_USER_REQUEST,
+    UPDATE_USER_SUCCESS,
+    UPDATE_USER_FAILURE,
   ],
   method: 'patch',
   endPoint: `users/${userId}`,

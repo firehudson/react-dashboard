@@ -5,7 +5,7 @@ import {
   LOGIN_FAILURE,
 } from '../actions/actionTypes';
 import { LOGOUT } from '../../../actions/appActionTypes';
-import { UDPATE_USER_SUCCESS } from '../../dashboard/actions/actionTypes';
+import { UPDATE_USER_SUCCESS } from '../../dashboard/actions/actionTypes';
 
 export const initialState = {};
 
@@ -19,7 +19,7 @@ const userReducer = handleActions(
       ...action.data,
       loading: false,
     }),
-    [UDPATE_USER_SUCCESS]: (state, action) => ({
+    [UPDATE_USER_SUCCESS]: (state, action) => ({
       ...action.data,
       loading: false,
     }),
