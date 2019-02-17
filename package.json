@@ -26,7 +26,7 @@
   },
   "scripts": {
     "start": "npm-run-all -l -p server client",
-    "server": "./node_modules/.bin/json-server ./mock/generate-db.js",
+    "server": "./node_modules/.bin/json-server ./mock/generate-db.js --middlewares ./mock/middlewares",
     "client": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

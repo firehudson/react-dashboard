@@ -1,4 +1,5 @@
 const faker = require('Faker');
+const fs = require('fs');
 const times = require('lodash/times');
 const config = require('./config');
 
@@ -43,6 +44,14 @@ const generateDatabase = () => {
       content: faker.Lorem.paragraph(3),
       userId: faker.random.array_element(userIds),
     });
+  });
+
+  fs.writeFile('./mock/db.json', JSON.stringify(db), (err) => {
+    if (err) {
+      console.error('writting data to file db.json failed.');
+    } else {
+      console.error('written data to file db.json.');
+    }
   });
 
   return db;
