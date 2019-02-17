@@ -20,14 +20,15 @@ const Wrapper = styled('header')`
   color: ${props => props.theme.colors.navbar.fontColor};
 `;
 
-const Header = ({ onLogout }) => (
+const Header = ({ onLogout, canLogout }) => (
   <Wrapper>
-    <LogoutButton onClick={onLogout}>Logout</LogoutButton>
+    {canLogout && <LogoutButton onClick={onLogout}>Logout</LogoutButton>}
   </Wrapper>
 );
 
 Header.propTypes = {
   onLogout: PropTypes.func.isRequired,
+  canLogout: PropTypes.bool.isRequired,
 };
 
 export default Header;

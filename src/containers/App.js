@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
+import { createStructuredSelector } from 'reselect';
+import { withRouter } from 'react-router-dom';
 
 import { logout } from '../actions';
 import withStore from '../utils/withStore';
@@ -10,11 +12,12 @@ import getTheme from '../constants/themes';
 import GlobalStyles from '../components/GlobalStyles';
 import Header from '../components/Header';
 import RootWrapper from '../components/RootWrapper';
+import { selectUserData } from '../modules/auth/selectors/user';
 
-const App = ({ children, onLogout }) => (
+const App = ({ children, onLogout, user }) => (
   <ThemeProvider theme={getTheme()}>
     <Fragment>
-      <Header onLogout={onLogout} />
+      <Header onLogout={onLogout} canLogout={!!(user && user.id)} />
       <RootWrapper>
         {children}
       </RootWrapper>
@@ -26,7 +29,14 @@ const App = ({ children, onLogout }) => (
 App.propTypes = {
   children: PropTypes.element.isRequired,
   onLogout: PropTypes.func.isRequired,
+  user: PropTypes.shape({
+    id: PropTypes.number,
+  }),
 };
+
+const mapStateToProps = createStructuredSelector({
+  user: selectUserData,
+});
 
 const mapDispatchToProps = dispatch => bindActionCreators(
   {
@@ -35,6 +45,6 @@ const mapDispatchToProps = dispatch => bindActionCreators(
   dispatch,
 );
 
-const reduxConnected = connect(null, mapDispatchToProps)(App);
+const reduxConnected = connect(mapStateToProps, mapDispatchToProps)(App);
 
-export default withStore(reduxConnected);
+export default withStore(withRouter(reduxConnected));
