@@ -4,6 +4,7 @@ export const theme = {
     app: {
       background: 'rgb(242, 240, 248)',
       primary: 'rgb(90, 89, 119)',
+      primaryBlur: 'rgb(90, 89, 119, 0.5)',
     },
     navbar: {
       background: 'rgb(73, 72, 90)',
