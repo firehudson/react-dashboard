@@ -16,17 +16,19 @@ const Avatar = styled('img')`
   border-radius: 15px;
 `;
 
-const Sidebar = ({ avatar, status }) => (
+const UserInfo = ({ avatar, status, firstName }) => (
   <Wrapper>
     <Avatar src={avatar} alt="user_avatar" />
-    {status}
+    <div>{firstName}</div>
+    <div>{status}</div>
     <Divider sizeX="60%" margin="10px 0 0 0" />
   </Wrapper>
 );
 
-Sidebar.propTypes = {
+UserInfo.propTypes = {
   avatar: PropTypes.string,
+  firstName: PropTypes.string,
   status: PropTypes.string,
 };
 
-export default Sidebar;
+export default UserInfo;

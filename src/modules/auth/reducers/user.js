@@ -1,5 +1,6 @@
 import { handleActions } from 'redux-actions';
 import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from '../actions/actionTypes';
+import { UDPATE_USER_SUCCESS } from '../../dashboard/actions/actionTypes'
 
 export const initialState = {};
 
@@ -10,6 +11,10 @@ const userReducer = handleActions(
       loading: true,
     }),
     [LOGIN_SUCCESS]: (state, action) => ({
+      ...action.data,
+      loading: false,
+    }),
+    [UDPATE_USER_SUCCESS]: (state, action) => ({
       ...action.data,
       loading: false,
     }),
