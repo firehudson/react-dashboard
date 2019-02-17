@@ -4,7 +4,7 @@ import { sagaMiddleware } from '../sagas';
 const logger = createLogger({
   diff: true,
   collapsed: true,
-})
+});
 
 const middlewares = [
   logger,
