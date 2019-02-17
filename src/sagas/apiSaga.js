@@ -20,7 +20,9 @@ export function* apiSaga(action) {
       throw new Error(response.data.error);
     }
 
-    yield put({ type: success, data: response.data.data });
+    const responseData = response.data.data || response.data;
+
+    yield put({ type: success, data: responseData });
   } catch (error) {
     yield put({ type: failure, error });
   }
