@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const RootWrapper = styled('div')`
-  height: 100%;
+  height: calc(100% - 60px);
   justify-content: center;
   align-items: center;
   display: flex;

@@ -17,7 +17,7 @@ import { selectUserData } from '../modules/auth/selectors/user';
 const App = ({ children, onLogout, user }) => (
   <ThemeProvider theme={getTheme()}>
     <Fragment>
-      <Header onLogout={onLogout} canLogout={!!(user && user.id)} />
+      <Header onLogout={onLogout} canLogout={!!(user && user.id !== undefined)} />
       <RootWrapper>
         {children}
       </RootWrapper>
