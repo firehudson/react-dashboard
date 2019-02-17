@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { createStructuredSelector } from 'reselect';
 import Sidebar from '../components/Sidebar';
-import { selectUserData } from '../../auth/selectors/login';
+import { selectUserData } from '../../auth/selectors/user';
 
 const Wrapper = styled('div')`
   width: 100%;

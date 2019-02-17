@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import validator from 'validator';
 import { login } from '../actions';
-import { selectUserError } from '../selectors/login';
+import { selectUserError } from '../selectors/user';
 import Card from '../../../components/Card';
 import LoginForm from '../components/login-form';
 

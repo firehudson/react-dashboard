@@ -9,7 +9,7 @@ import ContentWrapper from '../components/ContentWrapper';
 import PostSearchForm from '../components/PostSearchForm/index';
 import Posts from '../components/Posts';
 import { selectPostsData } from '../selectors/posts';
-import { selectUserData } from '../../auth/selectors/login';
+import { selectUserData } from '../../auth/selectors/user';
 
 class PostsPage extends Component {
   constructor(props) {

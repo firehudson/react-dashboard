@@ -8,7 +8,7 @@ import { createStructuredSelector } from 'reselect';
 import { updateUser } from '../actions';
 import ContentWrapper from '../components/ContentWrapper';
 import AccountSettingsForm from '../components/AccountSettingsForm';
-import { selectUserData } from '../../auth/selectors/login';
+import { selectUserData } from '../../auth/selectors/user';
 import Card from '../../../components/Card';
 
 const CenteredCard = styled(Card)`
